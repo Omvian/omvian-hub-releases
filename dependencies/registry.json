@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-02-27T00:00:00Z",
+  "sources": {
+    "primary": "https://raw.githubusercontent.com/Omvian/omvian-hub-releases/main/dependencies",
+    "mirror": "https://ghproxy.com/https://raw.githubusercontent.com/Omvian/omvian-hub-releases/main/dependencies"
+  },
+  "libraries": [
+    {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "version": "6.0.0",
+      "description": "多媒体处理框架，支持视频/音频转码、剪辑、合并等操作",
+      "license": {
+        "type": "LGPL-2.1-or-later",
+        "name": "GNU Lesser General Public License v2.1 or later",
+        "url": "https://ffmpeg.org/legal.html",
+        "requiresAttribution": true,
+        "requiresSourceOffer": true,
+        "allowsCommercialUse": true,
+        "allowsModification": true,
+        "allowsDistribution": true,
+        "allowsPrivateUse": true,
+        "conditions": [
+          "保留版权声明和许可证文本",
+          "修改后的文件需注明修改内容",
+          "分发时需提供许可证副本",
+          "使用 LGPL 库的应用程序可以闭源",
+          "修改 LGPL 库本身则必须开源修改部分"
+        ]
+      },
+      "homepage": "https://ffmpeg.org",
+      "category": "multimedia",
+      "platforms": {
+        "win32-x64": {
+          "file": "ffmpeg/6.0.0/ffmpeg-6.0.0-win-x64.zip",
+          "size": 52428800,
+          "checksum": "sha256:placeholder"
+        }
+      },
+      "executables": {
+        "win32": ["bin/ffmpeg.exe", "bin/ffprobe.exe"],
+        "darwin": ["bin/ffmpeg", "bin/ffprobe"],
+        "linux": ["bin/ffmpeg", "bin/ffprobe"]
+      }
+    }
+  ]
+}
