@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-02-27T00:00:00Z",
+  "updatedAt": "2026-02-27T10:10:00Z",
   "sources": {
     "primary": "https://raw.githubusercontent.com/Omvian/omvian-hub-releases/main/dependencies",
     "mirror": "https://ghproxy.com/https://raw.githubusercontent.com/Omvian/omvian-hub-releases/main/dependencies"
@@ -9,7 +9,7 @@
     {
       "id": "ffmpeg",
       "name": "FFmpeg",
-      "version": "6.0.0",
+      "version": "8.0.1",
       "description": "多媒体处理框架，支持视频/音频转码、剪辑、合并等操作",
       "license": {
         "type": "LGPL-2.1-or-later",
@@ -33,9 +33,9 @@
       "category": "multimedia",
       "platforms": {
         "win32-x64": {
-          "file": "ffmpeg/6.0.0/ffmpeg-6.0.0-win-x64.zip",
-          "size": 52428800,
-          "checksum": "sha256:placeholder"
+          "file": "ffmpeg/8.0.1/ffmpeg-8.0.1-win-x64.7z",
+          "size": 55372118,
+          "checksum": "sha256:8030DC469FBDE247B84CFC21A5C421F3965FFE779BC35DE08D78966E0C4A272C"
         }
       },
       "executables": {
