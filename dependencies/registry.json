@@ -35,7 +35,7 @@
       },
       "platforms": {
         "win32-x64": {
-          "expectedSize": 85000000,
+          "expectedSize": 57500000,
           "checksum": "sha256:to-be-verified",
           "executables": ["bin/ffmpeg.exe", "bin/ffprobe.exe"]
         }
