@@ -1,6 +1,6 @@
 {
-  "version": "2.0.0",
-  "updatedAt": "2026-03-20T00:00:00Z",
+  "version": "2.0.1",
+  "updatedAt": "2026-03-20T12:00:00Z",
   "libraries": [
     {
       "id": "ffmpeg",
