@@ -29,9 +29,8 @@
       },
       "download": {
         "official": {
-          "baseUrl": "https://www.gyan.dev/ffmpeg/builds",
-          "filePattern": "ffmpeg-{version}-full_build-shared.7z",
-          "checksumUrl": null
+          "baseUrl": "https://www.gyan.dev/ffmpeg/builds/packages",
+          "filePattern": "ffmpeg-{version}-full_build-shared.7z"
         }
       },
       "platforms": {
