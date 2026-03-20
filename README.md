@@ -1,33 +1,61 @@
 # Omvian Hub Releases
 
-本仓库用于存储 Omvian Hub 的安装包和公共依赖库。
+本仓库用于存放 Omvian Hub 程序的发布文件和依赖库配置。
 
 ## 目录结构
 
 ```
 omvian-hub-releases/
-├── releases/                     # 安装包发布目录
-│   └── v1.0.0/
-│       └── OmvianHub-Setup-1.0.0.exe
-├── dependencies/                 # 依赖库目录
-│   ├── registry.json            # 依赖库清单（核心文件）
-│   └── ffmpeg/
-│       └── 6.0.0/
-│           └── ffmpeg-6.0.0-win-x64.zip
+├── dependencies/
+│   └── registry.json    # 依赖库注册表
 └── README.md
 ```
 
-## 依赖库说明
+## 依赖库注册表
 
-### FFmpeg
+`dependencies/registry.json` 文件定义了 Omvian Hub 支持的依赖库列表。
 
-- **版本**: 6.0.0
-- **许可证**: LGPL-2.1-or-later
-- **主页**: https://ffmpeg.org
-- **描述**: 多媒体处理框架，支持视频/音频转码、剪辑、合并等操作
+### 当前支持的依赖库
+
+| 依赖库 | 版本 | 许可证 | 官方下载渠道 |
+|--------|------|--------|-------------|
+| FFmpeg | 8.0.1 | LGPL-3.0-or-later | https://www.gyan.dev/ffmpeg/builds/ |
+
+### 注册表格式
+
+```json
+{
+  "version": "2.0.0",
+  "updatedAt": "2026-03-20T00:00:00Z",
+  "libraries": [
+    {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "version": "8.0.1",
+      "download": {
+        "official": {
+          "baseUrl": "https://www.gyan.dev/ffmpeg/builds",
+          "filePattern": "ffmpeg-{version}-full_build-shared.7z"
+        }
+      },
+      "platforms": { ... },
+      "license": { ... }
+    }
+  ]
+}
+```
+
+## 版本说明
+
+- **备案版本**：程序只支持 registry.json 中备案的固定版本
+- **官方渠道**：所有依赖库从官方渠道下载，确保稳定性和许可证合规
 
 ## 许可证声明
 
 本仓库中的依赖库各自遵循其原始许可证：
 
-- FFmpeg: [LGPL-2.1-or-later](https://ffmpeg.org/legal.html)
+- FFmpeg: [LGPL-3.0-or-later](https://ffmpeg.org/legal.html)
+
+---
+
+*Omvian Hub - 现代化的桌面应用工具平台*

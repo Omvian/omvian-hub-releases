@@ -1,19 +1,17 @@
 {
-  "version": "1.0.0",
-  "updatedAt": "2026-02-27T10:10:00Z",
-  "sources": {
-    "primary": "https://raw.githubusercontent.com/Omvian/omvian-hub-releases/main/dependencies",
-    "mirror": "https://ghproxy.com/https://raw.githubusercontent.com/Omvian/omvian-hub-releases/main/dependencies"
-  },
+  "version": "2.0.0",
+  "updatedAt": "2026-03-20T00:00:00Z",
   "libraries": [
     {
       "id": "ffmpeg",
       "name": "FFmpeg",
       "version": "8.0.1",
       "description": "多媒体处理框架，支持视频/音频转码、剪辑、合并等操作",
+      "homepage": "https://ffmpeg.org",
+      "category": "multimedia",
       "license": {
-        "type": "LGPL-2.1-or-later",
-        "name": "GNU Lesser General Public License v2.1 or later",
+        "type": "LGPL-3.0-or-later",
+        "name": "GNU Lesser General Public License v3.0 or later",
         "url": "https://ffmpeg.org/legal.html",
         "requiresAttribution": true,
         "requiresSourceOffer": true,
@@ -29,20 +27,55 @@
           "修改 LGPL 库本身则必须开源修改部分"
         ]
       },
-      "homepage": "https://ffmpeg.org",
-      "category": "multimedia",
-      "platforms": {
-        "win32-x64": {
-          "file": "ffmpeg/8.0.1/ffmpeg-8.0.1-win-x64.7z",
-          "size": 55372118,
-          "checksum": "sha256:8030DC469FBDE247B84CFC21A5C421F3965FFE779BC35DE08D78966E0C4A272C"
+      "download": {
+        "official": {
+          "baseUrl": "https://www.gyan.dev/ffmpeg/builds",
+          "filePattern": "ffmpeg-{version}-full_build-shared.7z",
+          "checksumUrl": null
         }
       },
-      "executables": {
-        "win32": ["bin/ffmpeg.exe", "bin/ffprobe.exe"],
-        "darwin": ["bin/ffmpeg", "bin/ffprobe"],
-        "linux": ["bin/ffmpeg", "bin/ffprobe"]
-      }
+      "platforms": {
+        "win32-x64": {
+          "expectedSize": 85000000,
+          "checksum": "sha256:to-be-verified",
+          "executables": ["bin/ffmpeg.exe", "bin/ffprobe.exe"]
+        }
+      },
+      "usageGuide": {
+        "overview": "FFmpeg 是一个强大的多媒体处理框架，支持几乎所有常见的音视频格式转换、剪辑、合并等操作。",
+        "pathVariable": "OMVIAN_DEPENDENCY_FFMPEG",
+        "environmentSetup": [
+          "FFmpeg 无需额外配置环境变量，程序会自动处理路径",
+          "如需在命令行中使用，可将 bin 目录添加到 PATH"
+        ],
+        "usageSteps": [
+          "1. 在依赖库面板下载并安装 FFmpeg",
+          "2. 在工具代码中通过 SDK API 获取 FFmpeg 路径",
+          "3. 使用路径执行 FFmpeg 命令"
+        ],
+        "notes": [
+          "FFmpeg 使用 LGPL 许可证，可免费商用",
+          "如需修改 FFmpeg 源码，需遵循 LGPL 许可证要求"
+        ],
+        "links": [
+          { "title": "FFmpeg 官方文档", "url": "https://ffmpeg.org/documentation.html" },
+          { "title": "FFmpeg 命令行参数", "url": "https://ffmpeg.org/ffmpeg.html" }
+        ]
+      },
+      "codeExamples": [
+        {
+          "title": "视频转码",
+          "description": "将视频从一种格式转换为另一种格式",
+          "language": "typescript",
+          "code": "const ffmpegPath = await window.omvian.getDependencyPath('ffmpeg', 'bin/ffmpeg.exe')\nconst result = await window.omvian.executeShell({\n  command: ffmpegPath,\n  args: ['-i', 'input.mp4', '-c:v', 'libx264', 'output.mp4'],\n  options: { timeoutMs: 60000 }\n})\nconsole.log(result.stdout)"
+        },
+        {
+          "title": "提取音频",
+          "description": "从视频中提取音频",
+          "language": "typescript",
+          "code": "const ffmpegPath = await window.omvian.getDependencyPath('ffmpeg', 'bin/ffmpeg.exe')\nconst result = await window.omvian.executeShell({\n  command: ffmpegPath,\n  args: ['-i', 'input.mp4', '-vn', '-acodec', 'copy', 'output.aac'],\n  options: { timeoutMs: 30000 }\n})"
+        }
+      ]
     }
   ]
 }
